@@ -3,38 +3,36 @@
 function saveToStorage(key, value) {
   localStorage.setItem(key, value);
 }
-function getFromStorage(key) {
-  var obj = localStorage.getItem(key);
+function getFromStorage(key, macdinh) {
+  var obj = localStorage.getItem(key)
+    ? JSON.parse(localStorage.getItem(key))
+    : macdinh;
   return obj;
 }
 
 function deleteStorage(key) {
   localStorage.removeItem(key);
 }
-const currentUser = "USER-LOGIN";
+const keyUser = "USER-LOGIN";
 
-var obj_sto = getFromStorage(currentUser);
+//var obj_sto = getFromStorage(currentUser);
 
-const currentUserLog = JSON.parse(obj_sto) || null;
-
-// const currentUser = {
-//   username: inputUsername.value,
-//   password: inputPassword.value,
-// };
-// saveToStorage("currentUser", currentUser);
-
+//const currentUserLog = JSON.parse(obj_sto) || null;
 const key = "userArr";
-console.log("Hello");
-var obj_ar = getFromStorage(key);
+// console.log("Hello");
+// var obj_ar = getFromStorage(key);
 
-let userArr = [];
-if (obj_ar.length == 15) userArr = [];
-else userArr = JSON.parse(obj_ar) || [];
-
+// let userArr = [];
+// if (obj_ar.length == 15) userArr = [];
+// else userArr = JSON.parse(obj_ar) || [];
+let userArr = getFromStorage(key, []);
+console.log(userArr);
 //lấy giữ liệutodoArr từ localstorage
-const todos = JSON.parse(getFromStorage("todoArr"))
-  ? JSON.parse(getFromStorage("todoArr"))
-  : [];
+// const todos = JSON.parse(getFromStorage("todoArr"), [])
+//   ? getFromStorage("todoArr")
+//   : [];
+
+const todos = getFromStorage("todoArr", []);
 console.log(todos);
 //chuyển đổi từ dạng ob về dạng class instance
 const todoArr = todos.map((todo) => parseTask(todo));

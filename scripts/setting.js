@@ -11,10 +11,11 @@ if (userArr) {
       userArr.category = inputcategory.value;
       saveToStorage("userArr", userArr);
       //cập nhật lại mảng user
-      const index = currentUser.findIndex(
+      const index = userArr.findIndex(
         (userItem) => userItem.username === userArr.username
       );
-      currentUser[index] = userArr;
+      // currentUser[index] = userArr;
+      keyUser = userArr[index];
       saveToStorage("currentUser", currentUser);
       //reset lại form nhập và thông báo cad đặt thành công
       alert("cài đặt thành công !");

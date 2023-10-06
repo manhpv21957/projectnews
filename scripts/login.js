@@ -9,8 +9,8 @@ btnSubmit.addEventListener("click", function () {
   const isvalidate = validate();
   if (isvalidate) {
     //console.log(userArr);
-    let userArr = getFromStorage("userArr");
-    userArr = JSON.parse(userArr);
+    // let userArr = getFromStorage("userArr");
+    // userArr = JSON.parse(userArr);
     //tìm kiếm trong userArr thông tin user người dùng nhập vào có đúng hay không
     const finddata = userArr.find(
       (item) =>

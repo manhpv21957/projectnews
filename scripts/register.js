@@ -60,9 +60,9 @@ function validate(user) {
     alert("vui logf nhập confirm paswword");
     isvalidate = false;
   }
-  let userArr = getFromStorage("userArr");
-  if (userArr.length == 15) userArr = [];
-  else userArr = JSON.parse(userArr);
+  // let userArr = getFromStorage("userArr");
+  // if (userArr.length == 15) userArr = [];
+  // else userArr = JSON.parse(userArr);
   //userArr = JSON.parse(userArr);
   //username không được trùng vs username trc đó
 
